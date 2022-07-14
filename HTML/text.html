@@ -1,0 +1,44 @@
+1)목록(List) 태그
+
+(1)순서가 있는 목록(List) <ol> 태그
+
+<!-- <ol>태그의 type에 따라 하위 목록들의 순서 마커가 정해지고, start에 따라 마커의 시작 값이 정해진다.
+    기본 값은 숫자(1, 2, 3, ...)이다. -->
+
+    *** type, start 대신 CSS3 스타일을 사용할 것을 권장***
+
+    <ol type="1"|"A"|"a"|"I"|"i"
+        start="value">
+        <li>아이템</li>
+        <li>아이템</li>
+    </ol>
+
+    - type : 마커 종류
+        type="1"    1,2,3... {defult}
+        type="A"    A,B,C...
+        type="a"    a,b,c...
+        type="I"    I,II,III...
+        type="i"    i,ii,iii...
+
+    -start : 마커의 시작 값
+            start="C"   C,D,E...
+            start="5"   5,6,7...
+
+(2) 순서가 없는 목록(List) <ul> 태그
+    
+    <!-- <ul>태그는 순서가 없기 때문에 type에 마커의 순서가 아닌 모양을 표시하는 값을 넣는다
+            또한 순서가 없기 떄뭉네 시작 값 지정(start) 속성이 없다 -->
+
+*** type 대신 CSS3 스타일을 사용할 것을 권장 ***
+
+<ui type="disc"|"square"|"circle">
+    <li>아이템</li>
+    <li>아이템</li>
+</ui>
+
+- type : 마커 종류
+        type="disc"     ●,●,●...
+        type="square"   ■,■,■...
+        type="circle"   ○,○,○...
+
+    
