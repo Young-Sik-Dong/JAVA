@@ -1,0 +1,17 @@
+body {
+    background-color:  linen;
+    color: blueviolet;
+    /*margin-left or right : 좌-우측 띄어쓰기 */
+    margin-left: 30px;
+    margin-right: 30px;
+}
+h3 {
+    /*text-align : centor 문자 위치 중앙지점*/
+    text-align : centor;
+    color: darkred;
+}
+/*background와 background-color 모두 색을 바꿀 수 있으나
+background-color는 색상만 변경 가능하고
+background는 여러 속성을 지정해서 사용할 수 있다. */
+
+/*해당 확장자에는 해당 주석을 사용해야한다. 주석에러가 있음*/
