@@ -1,0 +1,43 @@
+<!-- box-shadow 프로퍼티
+박스 전체에 그림자 효과 -->
+
+<!DOCTYPE html>
+<html>
+    <head><meta charset="UTF-8">
+    <title>div에 박스 그림자 만들기</title>
+    <style>
+        /* 그림자 x축, 그림자 y축, 그림자 색 */
+        /* x축이 양수면 오른쪽 음수면 왼쪽으로 생김 */
+        /* y축이 양수면 아래쪽 음수면 위쪽으로 생김 */
+        .redbox {
+            box-shadow : 10px 10px red;
+        }
+        /* 그림자 x축, 그림자 y축, 그림자 번짐 정도, 그림자 색 */
+        .bluebox {
+            box-shadow: 10px 10px skyblue;
+        }
+        /* 그림자 x축, 그림자 y축, 그림자 번짐 정도, 그림자 색 */
+        .multiEffect {
+            box-shadow: 2px 2px 2px black,
+            /* 그림자 번짐과 색 2개씩 추가 */
+                        0 0 25px blue,
+                        0 0 5px darkblue;
+        }
+        div { /* width, height : 패딩의 가로, 세로 크기라 볼 수 있음 */
+            width: 150px;
+            height: 70px;
+            padding: 10px;
+            border : 10px solid lightgray;
+            background-image: url("C:\\Users\\Dong's\\Documents\\HTML\\media/spongebob.png");
+            background-size: 150px 100px;
+            background-repeat: no-repeat;
+        }
+    </style></head>
+    <body>
+        <h3>박스 그림자 만들기</h3>
+        <hr>
+        <div class="redBox">뚱이와 함께</div><br>
+        <div class="blueBox">뚱이와 함께</div><br>
+        <div class="multiEffect">뚱이와 함께</div><br>
+    </body>
+</html>
