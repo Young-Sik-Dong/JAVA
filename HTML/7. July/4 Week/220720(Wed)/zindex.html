@@ -10,11 +10,12 @@
     좌표상 겹치면 가려짐 */
         div { position: absolute; }
         img { position: absolute; }
-        #spadeA { z-index: -3; left: 10px; top: -10px;}
-        #spade2 { z-index: -3; left: 10px; top: -10px;}
+        #spadeA { z-index: -3; left: 10px; top: 0px;}
+        #spade2 { z-index: -3; left: 10px; top: 0px;}
         #spade3 { z-index: 3; left: 80px; top: 40px;}
         #spade7 { z-index: 7; left: 120px; top: 50px;}
-        #spadeA:hover {z-index: 2; left: 30px; top: 30px;}
+        #spadeA:hover {z-index: 2; left: 40px; top: 30px;}
+        /* #spade2~#spadeA:hover {z-index: -3; left: 20px; top: 10px;} */
     </style></head>
     <body>
         <h3>한장의 카드는?</h3>
@@ -30,3 +31,20 @@
         </div>
     </body>
 </html>
+<!-- visibility 속성은 HTML 요소가 웹 페이지에 표현될지 아닐지만을 결정한다
+따라서 웹 페이지에는 나타나지 않더라도 레이아웃 내에는 여전히 존재하게 되며,
+코드 내에서도 당연히 존재한다
+visibility 속성을 자바스크립트와 함꼐 사용하면
+매우 복잡한 메뉴나 레이아웃을 손쉽게 만들 수 있다
+
+visible     해당 HTML 요소를 웹 페이지에 나타낸다
+hidden      HTML 요소를 웹 페이지에 나타내지 않는다
+            하지만 여전히 웹 페이지의 레이아웃에는 존재한다
+collapse    이 속성값은 동적인 테이블에서만 사용할 수 있으며
+            테이블의 테두리를 한 줄만 보여준다
+        
+요소를 숨기는 방법 2가지
+<style>
+p.none{display:none;}
+p.hidden{visibility:hidden;}</style>
+-->
