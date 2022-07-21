@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>애니메이션 응용</title>
+    <style>
+        /* @keyframes 어노테이션 사용 */
+        @keyframes imagerotation {
+            /* animation-name: imagerotation;    ->  name은 @keyframes imagerotation
+                            에서 사용된 이름을 써야 애니메이션 동작이 적용됨 */
+            /* translate으로 초기 위치 지정(x축으로 300px)
+                나중 위치는 x축으로 0px */
+            0% { transform : translate(300px);}
+            100% { transform: translate(0px);}
+        }
+        /* p태그에 애니메이션 입력 */
+        p {
+            animation-name: imagerotation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+    </style></head>
+    <body>
+        <h3>질문있습니다</h3>
+        <!-- alt : 이미지 경로가 잘못됐을 때 이미지를 대체하는 표현 -->
+        <p><img src="D:\media/question.png" alt="image" width="15px" height="15px">
+                질문 있습니다.</p>
+    </body>
+</html>
