@@ -83,6 +83,9 @@
         #thumnail {
             padding-top: 30px;
             padding-left: 70px;
+            border: 1px solid red;
+            float: left;
+
         }
         #move_left {
             margin-top: 30px;
@@ -92,6 +95,10 @@
         #photos {
             margin-top: 3px;
             margin-left: 10px;
+        }
+        .img {
+            float: left;
+            padding: 3px;
         }
         #move_right{
             margin-top: 20px;
@@ -116,17 +123,21 @@
             <div id="main_title">
             풍경 사진
             </div>
-            <img id="main_img" src="D:\media/b-1.jpg">
-            <div id="thumnail">
-            <img id="move_left" src="D:\media/bt_move_left.gif">
+            <img id="main_img" src="D:\media/b-1.jpg" 
+                 style="width: 600px;
+                       height: 300px;">
+            <div id="thumnail"
+                 style="width: 580px; height: 100px">
+            <img id="move_left" src="D:\media/bt_move_left.gif"
+                 style="width: 25px;">
                 <ul id="photos">
-                    <li><a href="#"><img src="D:\media/s-1.jpg"></a></li>
-                    <li><a href="#"><img src="D:\media/s-2.jpg"></a></li>
-                    <li><a href="#"><img src="D:\media/s-3.jpg"></a></li>
-                    <li><a href="#"><img src="D:\media/s-4.jpg"></a></li>
-                    <li><a href="#"><img src="D:\media/s-5.jpg"></a></li>
+                    <li class="img"><a href="#"><img src="D:\media/s-1.jpg" style="width: 50px; height: 50px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\media/s-2.jpg" style="width: 50px; height: 50px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\media/s-3.jpg" style="width: 50px; height: 50px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\media/s-4.jpg" style="width: 50px; height: 50px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\media/s-5.jpg" style="width: 50px; height: 50px"></a></li>
                 </ul>
-                <img id="move_right" src="D:\media/bt_move_right.gif">
+                <img id="move_right" src="D:\media/bt_move_right.gif" style="width: 25px;">
             </div>
         </div> <!-- end of right -->
     </body>
