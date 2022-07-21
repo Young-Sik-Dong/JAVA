@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <head>
+        <title>포토 갤러리</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #eeeeee;
+            font-family: "돋움";
+            font-size: 12px;
+            color: #666666;
+        }
+        li {
+            list-style-type: none;
+        }
+        .clear {
+            clear:both;
+        }
+        #logo { /*1번 문제*/
+            font-size: 16px;
+            color: #3e2b23;
+            padding-top: 10px;
+            padding-left: 30px;
+            position: absolute; /*고쳤다 이것 굉장히 중요함*/
+        }
+        #top_menu { /*1번 문제 padding이 적용이 되지 않음???*/
+            padding-top: 10px; 
+            padding-right: 10px;
+            text-align: right;
+        }
+        #header { /*1번 문제*/
+            width: 800px;
+            height: 40px;
+            background-color: #dddddd;
+        }
+        #left { /*2번 문제*/
+            width: 150px;
+            height: 600px;
+            background-color: #343333;
+            color: #e2e2e2;
+        }
+        h2 { /*3번 문제*/
+            font-weight: normal;
+            padding-top: 20px;
+            padding-left: 30px;
+        }
+        .submenu{ /*3번 문제*/
+            font-size: 14px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 5px;
+            padding-left: 25px;
+            padding-block: 3px;
+        }
+        #right { /*4번 문제*/
+            width: 650px;
+            height: 600px;
+            background-color: #252525;
+            position: absolute;
+            left: 150px;
+            top: 40px;
+        }
+        #main_title { /*5번 문제*/
+            width: 572px;
+            padding: 10px;
+            border: solid 5px;
+            border-color: #444444;
+            margin-top: 24px;
+            margin-left: 24px;
+            font-size: 18px;
+            color: white;
+            font-weight: bolder;
+        }
+        #main_img { /*6번 문제*/
+            padding-top: 15px;
+            padding-left: 24px;
+            
+        }
+        #thumnail {
+            padding-top: 30px;
+            padding-left: 70px;
+            float: left;
+
+        }
+        #move_left {
+            margin-top: 20px;
+            margin-right: 5px;
+            margin-left: 40px;
+        }
+        #photos {
+            margin-top: 3px;
+            margin-left: 10px;
+            position: relative;
+            bottom : 50px;
+            left : 60px;
+        }
+        .img {
+            float: left;
+            padding: 10px;
+        }
+        #move_right{
+            margin-top: 20px;
+            margin-left: 20px;
+            position: relative;
+            left : 40px;
+            bottom : 50px;
+        }
+    </style></head>
+    <body>
+        <div id="header">
+            <div id="logo">PHOTO GALLERY</div>
+            <div id="top_menu">로그인 | 회원가입 | 방명록</div>
+        </div>
+        <div id="left">
+            <h2>포토갤러리</h2>
+            <ul>
+                <li class="submenu">+ 풍경</li>
+                <li class="submenu">+ 일상</li>
+                <li class="submenu">+ 인물</li>
+                <li class="submenu">+ 가족</li>
+            </ul>
+        </div> <!-- end of left -->
+        <div id="right">
+            <div id="main_title">
+            풍경 사진
+            </div>
+            <img id="main_img" src="D:\project/b-1.jpg" 
+                 style="width: 600px;
+                       height: 300px;">
+            <div id="thumnail"
+                 style="width: 580px; height: 100px">
+            <img id="move_left" src="D:\project/bt_move_left.gif"
+                 style="width: 25px;">
+                <ul id="photos">
+                    <li class="img"><a href="#"><img src="D:\project/s-1.jpg" style="width: 40px; height: 40px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\project/s-2.jpg" style="width: 40px; height: 40px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\project/s-3.jpg" style="width: 40px; height: 40px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\project/s-4.jpg" style="width: 40px; height: 40px"></a></li>
+                    <li class="img"><a href="#"><img src="D:\project/s-5.jpg" style="width: 40px; height: 40px"></a></li>
+                </ul>
+                <img id="move_right" src="D:\project/bt_move_right.gif" style="width: 25px;">
+            </div>
+        </div> <!-- end of right -->
+    </body>
+</html>
