@@ -1,0 +1,72 @@
+<html><head><title>대입 연산</title>
+    <script>
+        // 이 부분은 전향 후향 연산자
+            var num1 = 35;
+            // ++이 뒤에 오는 경우 해당 라인에서는 가산이 되지 않고
+            // 다음 줄에서 부터 된다(선 출력(num) 후 연산(++))
+            var num2 = num1++;
+            // ++이 먼저 오는 경우 최우선으로 연산이 진행
+            // 선 연산(++) 후 출력(num) 이렇게 외우면 편함
+            // 각종 자격시험 단골 메뉴기 떔누에 꼭 외워두는 것이 좋음
+            var num3 = ++num1;
+    
+            document.write("num1 = " + num1 + "<br>");
+            document.write("num2 = " + num2 + "<br>");
+            document.write("num3 = " + num3 + "<br>");
+    
+            document.write("abc" + 23 + "<br>");
+            document.write(23 + "abc" + "<br>");
+            document.write(23 + "35" + "<br>");
+            document.write(23 + 35 + "<br>");
+            document.write(23 + 35 + "abc" + "<br>");
+            document.write("abc" + 23 + 35 + "<br><hr>");
+    </script>
+    </head></html>
+
+<!DOCTYPE html>
+<html><head><title>대입 연산</title></head>
+<body>
+    <h3>대입 연산</h3><hr>
+    <script>
+        var x=3, y=3, z=3;
+        document.write("x=" + x + ", y=" + y);
+        document.write(", z=" + z + "<br><br>");
+
+        x += 3; // x=x+3 -> x=6
+        y *= 3; // y=y*3 -> y=9
+        z %= 2; // z=z%2 -> z=1
+
+        document.write("x += 3; 실행 후, x=" + x + "<br>");
+        document.write("y *= 3; 실행 후, y=" + y + "<br>");
+        document.write("z %= 2; 실행 후, z=" + z + "<br>");
+
+        var x = 13, y = 7;
+        document.write("x=" + x + ", y=" + y + "<br><br>");
+        document.write("x == y : " + (x==y) + "<br>");
+        document.write("x != y : " + (x!=y) + "<br>");
+
+        var x=true, y=false;
+        document.write("x=" + x + ", y=" + y + "<br><br>");
+        document.write("x && y : " + (x&&y) + "<br>");
+        document.write("x || y : " + (x||y) + "<br>");
+        document.write("!x : " + (!x) + "<br>");
+        document.write("<hr>");
+        document.write("(3>2) && (3<4) : " + ((3>2)&&(3<4)) + "<br>");
+        document.write("(3==-2) || (-1<8) : " + ((3==2)||(-1<0)));
+    </script>
+</body></html>
+<!-- 
+비교 연산   두 값 비교, true나 false의 결과를 내는 연산
+논리 연산   AND, OR, NOT
+            a && b      논리AND연산     a, b 모두 true일 때 true를 리턴
+            a || b      논리OR연산      a, b 중 하나라도 true이면 true 리턴
+            !a          논리NOT연산     a true이면 false값을 준다
+조건 연산(삼항연산)
+condition ? expT : expF
+condition true이면 전체 결과는 expT의 계산 값
+          false이면 expF의 계산 값
+
+증감 연산자
+a++(후위연산자 증가) a=a+1
+a--(후위연산자 감소) a=a-1
+ -->
