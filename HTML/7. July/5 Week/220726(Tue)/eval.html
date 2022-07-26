@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head>상수</head>
+<script>
+    function evall() {
+        //prompt를 활용해 수식 문자열 획득(문자열이다)
+        var str = prompt("수식을 입력하시오", "1+2+3+4+5");
+
+        if(str == "")
+        {
+            document.write("입력된 식이 없습니다.");
+            // 입력이 있을 때, eval 수식을 계산
+        }
+        else
+        {
+            var sum = eval(str);
+            document.write(str + " = " + sum);
+        }
+    }
+</script>
+<body>
+    <h3>상수</h3><hr>
+    <script>
+        evall();
+    </script>
+</body>
+</html>
