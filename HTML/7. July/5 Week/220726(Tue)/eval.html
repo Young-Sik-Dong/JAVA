@@ -24,3 +24,30 @@
     </script>
 </body>
 </html>
+
+<!-- 
+    parseFloat()    문자열을 파싱하여 부동 소수점 수(floatting point number)로 반환
+
+    parseFloat("123");          // 123
+    parseFloat("123.000");      // 123
+    parseFloat("123.456");      // 123.456
+    parseFloat("12 34 56");     // 12
+    parseFloat(" 123 ");        // 123
+    parseFloat("123 초콜릿");   // 123
+    parseFloat("초콜릿 123");   // NaN
+    
+    parseInt()      문자열을 파싱하여 정수로 변환
+                    두 번째 인수로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환
+                    전달받은 문자열의 시작이 "0x"로 시작하면 16진수로, "0o"로 시작하면 8진수로 인식
+
+    parseInt("123")     // 123
+    parseInt("123.456") // 123
+
+    String()        전달받은 객체의 값을 문자열로 반환
+
+    String(123);        // 123
+    String(123.456);    // 123.456
+    String("123");      // 123
+    String(new Date()); // 현재 날짜에 해당하는 문자열을 반환
+    String(null)l       // null
+ -->
