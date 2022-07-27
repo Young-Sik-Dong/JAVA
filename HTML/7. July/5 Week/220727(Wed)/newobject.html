@@ -1,0 +1,57 @@
+<!-- 
+    사용자가 새로운 타입의 객체 작성 가능
+    새로운 타입의 객체 만드는 2가지 방법 소개
+    1. new Object()
+    2. 리터럴 표기법
+
+    var account = new Object();
+        //  account.변수명       js의 모든 변수는 var
+            account.owner = "대장동";   // 계좌 주인 프로퍼티 생성 및 초기화
+            account.code = "1111";      // 코드 프로퍼티 생성 및 초기화
+            account.balance = 35000;    // 잔액 프로퍼티 생성 및 초기화
+        사용할 변수들을 초기화 시킨다
+        이 변수들을 여기서 지정해두었기에 따로 함수에서 this로 사용하는것
+
+            account.inquiry = inquiry;
+        object 변수 account에 위에 정의해둔 함수를 통해 메소드 작성 inquiry 함수 사용
+
+        account.deposit(10000); //10000원 적금
+                document.write("10000원 저금 후 잔액은" + account.inquiry() + "<br>");
+        body에서 위에서 지정해 줘야지만 사용 가능
+        function으로 지정한 함수를 호출
+ -->
+
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <title>new Object()로 사용자 객체 만들기</title>
+        <script>
+            function inquiry() { return this.balance;}          // 현재 잔액 반환
+            function deposit(money) { this.balance += money;}   // 입금
+            function withdraw(money) { this.balance -= money;}  // 예금 인출 money는 인출하고자 하는 액수 money가 balance 보다 작다고 가정
+            // 사용자 객체 만들기
+            var account = new Object();
+            account.owner = "대장동";       // 계좌 주인 프로퍼티 생성 및 초기화
+            account.code = "1111";          // 코드 프로퍼티 생성 및 초기화
+            account.balance = 35000;        // 잔액 프로퍼티 생성 및 초기화
+            // 상단에 작성된 함수들은 함수 명만 작성해야 동작
+            account.inquiry = inquiry;      // 메소드 작성 inquiry 항수 사용
+            account.deposit = deposit;      // 메소드 작성 deposit 함수 사용
+            account.withdraw = withdraw;    // 메소드 작성 withdraw 함수 사용
+        </script>
+    </head>
+    <body>
+        <h3>new Object()로 사용자 객체 만들기</h3><hr>
+        <script>
+            // 객체 활용, 데이터 출력
+            document.write("account : ");
+            document.write(account.owner + ", ");
+            document.write(account.code + ", ");
+            document.write(account.balance + "원<br>");
+            account.deposit(10000); // 10000원 저금
+            document.write("10000원 저금 후 잔액은 " + account.inquiry() + "<br>");
+            account.withdraw(5000); // 5000원 인출
+            document.write("5000원 인출 후 잔액은 " + account.inquiry() + "<br>");
+        </script>
+    </body>
+ </html>
