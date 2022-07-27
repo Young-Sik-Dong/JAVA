@@ -27,9 +27,11 @@
             document.write("a : " + a + "<br>");
             document.write("b : " + b + "<br><hr>");
 
-            // chatat(0) : 첫 번째 글자 출력
+            // chatAt(0) : 첫 번째 글자 출력
             document.write(a.charAt(0) + "<br>");
             // a 문자열에 b를 출력하라는 뜻, 입니다는 동작을 안함
+            // chatAt(특수문자) : 인덱스 0의 값 반환
+            // chatAt(인수, 무시되는 값) : chatAt 메소드는 앞의 인수만 인식
             document.write(a.charAt(b, "입니다") + "<br>");
             // a.indexOf("s") : s가 문장 내 몇 번째에 있는지 출력
             document.write(a.indexOf("s") + "<br>");
