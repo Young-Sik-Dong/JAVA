@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head><title>innerHTML 활용</title>
+    <style>
+        /* #이 들어갔기 때문에 id가 result인 태그에 해당 스타일을 적응한다 */
+        #result {
+            background-color: yellow;
+            color: darkblue;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function change() {
+            // firstP 라는 아이디를 갖는 태그 객체를 생성
+            var p = document.getElementById("firstP");
+            // innerHTML 프로퍼티를 활용해 이미지 삽입
+            // result.innerHTML : id가 result인 태그에 정보 입력
+            result.innerHTML =
+            "나의 <img src='D:\\media/mio.png' width='100px' height='100px'> 고양이"
+        }
+    </script></head>
+    <body>
+        <h3>innerHTML 활용 : 아래 글자에 클릭하면 예쁜 강아지가 보입니다.</h3><hr>
+        <!-- 클릭하면 -->
+        <p id="firstP" style="color: blue"
+            onclick="change()">
+            여기에 <span style="color: red">클릭하세요</span></p>
+        <p id="result">궁금해</p>
+    </body>
+</html>
