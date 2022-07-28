@@ -37,3 +37,21 @@
         
     </body>
 </html>
+<!-- 
+    1. <p><a href="javascript:createDIV()">DIV 생성</a></p>
+        자바스크립트 즉) script에 있는 creatDIV 함수를 호출
+    2. var obj = document.getElementById("parent");
+        obj에 id가 parent인 값을 받음 -> <body id="parent">
+    3. var newDIV = document.createElement("div");
+        새롭게 newDIV라는 변수에 div라는 요소를 생성 즉) 없던 값을 만들어 내는 것
+    4. newDIV.innerHTML = "새로 생성된 DIV입니다."
+        만들어서 이렇게 문구도 넣고, 색도 주고, id 속성값도 넣고 여러 설정을 함
+    5. 만약 1번, DIV 생성이라는 text를 클릭했을 때 creatDIV 함수가 실행되는데
+            var p = this.parentElement; // 부모 HTML 태그 요소
+            그 요소에서 자식인 newDIV 값을 삭제(독립)
+            p.removeChild(this);
+            그 내용 안에는, p라는 변수에 부모 태그 요소를 가져온 다음
+            그 부모 태그요소 안에 있는 newDIV라는 값을 삭제 이 값은 부모와 독립
+    6. 독립한 다음에 다시 obj.appendChild(newDIV); 속성값으로 들어감
+       클릭할 때 마다 새롭게 문구 등장
+ -->
