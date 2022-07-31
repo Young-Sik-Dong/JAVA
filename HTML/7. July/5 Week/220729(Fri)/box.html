@@ -13,7 +13,7 @@
             var yHeight=100;
             $("div").click(function(){
                 // 클릭시 해당 박스의 치수에서 -10씩 하고
-                xWidth=xWidth-10;
+                xWidth=xWidth-10;   
                 yHeight=yHeight-10;
                 // 그 결과를 해당 div 태그에 적용시킴 더불어 box 스타일 적용
                 $(this).width(xWidth).addClass("box");
@@ -42,8 +42,8 @@
         <div>박스4</div>
         <div>박스5</div>
     </body>
-</head>
-    </html>
+    </head>
+</html>
 <!--
     $(this).width(xWidth).addClass("box");
     $(this).height(yHeight).addClass("box");
