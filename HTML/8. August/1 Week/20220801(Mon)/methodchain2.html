@@ -23,7 +23,7 @@
                 margin: 20px auto 0 auto;
                 text-align: right;
                 /* 이미지 위치를 x축에서 550px 만큼 우측으로 이동 */
-                width: 550px;
+                width: 650px;
             }
             .moving img {
                 cursor: pointer;
@@ -35,7 +35,7 @@
         <div class="init">
             <button type="button" onclick="back('.moving img')">초기화 상태</button><br>
             <!-- 버튼 클릭 시 moving 클래스 내의 img 요소들을 인수로 back 함수 호출 -->
-            <!-- onclick="back('.moving img') -->
+            <!-- onclick="back('.moving img') 에서 ()안의 '.moving img' 문구는 필요 없음 -->
         </div>
         <div class="moving">
             <!-- 각 이미지 클릭 시 자기 자신 객체와 속도 값을 인수로 move 함수 호출 -->
