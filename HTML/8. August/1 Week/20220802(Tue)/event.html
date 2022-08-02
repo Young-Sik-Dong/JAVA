@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>이벤트 객체 전달받기</title>
+    </head>
+    <body>
+        <p id="p">마우스를 올려보세요</p>
+        <button onclick="f(event)">클릭하세요</button>
+        <script>
+            // 지금 f(e)에서 e는 이벤트 객체
+            function f(e) { // e는 현재 발생한 이벤트 객체
+                alert(e.type); // type : 지금 객체의 이벤트 종류를 출력
+            }
+            // 마우스를 올리면, id=p인 p 태그에 onmouseover 이벤트가 적용
+            // 이벤트 타입도 클릭과 동일하게 수행
+            document.getElementById("p").onmouseover = f;
+        </script>
+    </body>
+</html>
