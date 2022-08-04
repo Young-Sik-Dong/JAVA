@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON stringify와 parse</title>
+        <script>
+            user = {
+                    name:'admin', email:'namgarambooks@naver.com', phone:'032-444-5555'
+            };
+            // user에 저장된 값을 출력
+            // [object Object]
+            alert(user);
+
+            // stringify: JSON 객체를 String 객체로 변환
+            userStr = JSON.stringify(user);
+            alert(userStr);
+
+            // parse : string 객체를 JSON 객체로 변환
+            JSON.parse(userStr, function(key, value){
+                alert(key+" "+value);
+            });
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
