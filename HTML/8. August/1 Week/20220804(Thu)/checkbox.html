@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head><title>선택된 물품 계산하기</title>
+    <script>
+        var sum=0;
+        function calc(cBox) {
+            // 체크 되면 cbox(Checkbox 객체) 객체가 checked 상태가 되고
+            if(cBox.checked)
+            // 해당 객체의 value 값을 더함
+                sum += parseInt(cBox.value);
+            else
+                sum -= parseInt(cBox.value);
+            // 합산 결과를 id=sumtext인 객체에 전송
+            // getElementById로 연산을 하는 방법
+            // 함수 내부 변수에 메소드를 대입해 객체 변수 생성
+            // 객체에 .메소드를 활용해 정보 입/출력
+            // document EHsms innerHTML 등을 활용해 객체가 가진 정보를 태그에 전송
+            document.getElementById("sumtext").value = sum;
+        }
+    </script></head>
+    <body>
+        <h3>물품을 선택하면 금액이 자동 계산됩니다.</h3><hr>
+        <form>
+            <!-- 체크박스에 체크를 하면 바로 calc 함수로 객체 정보를 이동 -->
+            <input type="checkbox" name="cap" value="10000"
+                   onclick="calc(this)">모자 1만원
+            <input type="checkbox" name="shose" value="30000"
+                   onclick="calc(this)">구두 3만원
+            <input type="checkbox" name="bag" value="80000"
+                   onclick="calc(this)">명품가방 8만원<br><hr>
+            지불하실 금액 <input type="text" id="sumtext" value="0">
+        </form>
+    </body>
+</html>
