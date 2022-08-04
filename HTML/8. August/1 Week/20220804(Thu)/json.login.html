@@ -33,3 +33,19 @@
         <div id="confirm"></div>
     </body>
 </html>
+<!-- 
+JSON은 네트워크 데이터 전송방식의 표준 Format으로 사용
+JSON은 String 문자열이므로 실제 자바스크립트에서 사용하기 위해
+파싱을 하여 객체로 사용할 수 잇는데, 이럴 때 사용하는 객체가 JSON 객체
+JSON 객체에는 parse와 stringify가 내장되어 있어 string -> object로 object -> string으로 변환
+
+parse (String -> Object 변환)
+    JSON 포멧 방식을 가지고 있는 String 데이터를 parse를 통해 Object로 변환
+    
+stringify (Object -> String 변환)
+    Object를 JSON 포멧방식을 가진 상태로 타입을 String으로 변환
+    
+var obj = {name : "nata" , age : 22};
+var objStr = Json.stringify(obj);
+console.log(objStr);
+ -->
