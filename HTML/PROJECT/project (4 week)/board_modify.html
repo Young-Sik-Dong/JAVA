@@ -9,45 +9,55 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <style>
+            .card-body {
+                box-shadow: 5px 5px 5px 5px lightgrey;
+                margin-left: 75px;
+                margin-top: 25px;
+                width: 600px;
+            }
+        </style>
     </head>
     <body>
-        <div class="form-group">
-            <!--board_writer_name으로 두 태그를 결합-->
-            <!--disabled : 해당 태그의 값을 입력하거나 변경할 수 없음-->
-            <label for="board_writer_name">작성자</label>
-            <input type="text" id="board_writer_name" name="board_writer_name" class="form-control" value="홍길동" disabled="disabled"/>
-        </div>
-        <div class="form-group">
-            <label for="board_date">작성날짜</label>
-            <input type="text" id="board_date" name="board_date" class="form-control" value="2018-7-20" disabled="disabled"/>
-        </div>
-        <div class="form-group">
-            <label for="board_subject">제목</label>
-            <input type="text" id="board_subject" name="board_subject" class="form-control" value="제목입니다"/>
-        </div>
-        <div class="form-group">
-            <label for="board_content">내용</label>
-            <textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none">본문입니다</textarea>
-        </div>
-        <div class="form-group">
-            <label for="board_file">첨부 이미지</label>
-            <!--img src를 활용해 이미지 삽입-->
-            <img src="logo.png" width="100%"/>
-            <!--file 인풋 타입으로 파일 경로 지정-->
-            <input type="file" name="board_file" id="board_file" class="form-control" accept="image/*"/>
-        </div>
-        <form action="board_modify.html" method="post">
+        <div class="card-body">
             <div class="form-group">
-            <!--text-right : 태그 요소 우측 정렬-->
-                <div class="text-right">
-                    <!--submit로 지정된 페이지로 정보 전송-->
-                    <!--action의 위치가 동일하므로 아무 일도 발생하지 않음-->
-                    <!--btn btn-primary, btn btn-info 모두 버튼 스타일 클래스 -->
-                    <button type="submit" class="btn btn-primary">수정완료</button>
-                    <!--취소 버튼 누를시, board_read.html로 이동-->
-                    <a href="board_read.html" class="btn btn-info">취소</a>
-                </div>
+                <!--board_writer_name으로 두 태그를 결합-->
+                <!--disabled : 해당 태그의 값을 입력하거나 변경할 수 없음-->
+                <label for="board_writer_name">작성자</label>
+                <input type="text" id="board_writer_name" name="board_writer_name" class="form-control" value="홍길동" disabled="disabled"/>
             </div>
-        </form> 
+            <div class="form-group">
+                <label for="board_date">작성날짜</label>
+                <input type="text" id="board_date" name="board_date" class="form-control" value="2018-7-20" disabled="disabled"/>
+            </div>
+            <div class="form-group">
+                <label for="board_subject">제목</label>
+                <input type="text" id="board_subject" name="board_subject" class="form-control" value="제목입니다"/>
+            </div>
+            <div class="form-group">
+                <label for="board_content">내용</label>
+                <textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none">본문입니다</textarea>
+            </div>
+            <div class="form-group">
+                <label for="board_file">첨부 이미지</label>
+                <!--img src를 활용해 이미지 삽입-->
+                <img src="logo.png" width="100%"/>
+                <!--file 인풋 타입으로 파일 경로 지정-->
+                <input type="file" name="board_file" id="board_file" class="form-control" accept="image/*"/>
+            </div>
+            <form action="board_modify.html" method="post">
+                <div class="form-group">
+                <!--text-right : 태그 요소 우측 정렬-->
+                    <div class="text-right">
+                        <!--submit로 지정된 페이지로 정보 전송-->
+                        <!--action의 위치가 동일하므로 아무 일도 발생하지 않음-->
+                        <!--btn btn-primary, btn btn-info 모두 버튼 스타일 클래스 -->
+                        <button type="submit" class="btn btn-primary">수정완료</button>
+                        <!--취소 버튼 누를시, board_read.html로 이동-->
+                        <a href="board_read.html" class="btn btn-info">취소</a>
+                    </div>
+                </div>
+            </form> 
+        </div>
     </body>
 </html>
