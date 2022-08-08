@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <title></title>
+        <style>
+            #shopping_cart {
+                width: 610px;
+                height: 100px;
+                padding: 10px;
+                border: 1px dotted red;
+            }
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+        <script>
+            function allowDrop(ev) {
+                //preventDefault : a, 태그나 submit 태그가 눌렀을 때 창의 새로고침을 막는 메소드
+                ev.preventDefault();
+            }
+            function drag(ev) {
+            // ev.dataTransfer.setData("text", ev.target.id) : 이벤트 핸들러에서
+            // 전달할 데이터를 지정, 키-값의 형태
+                ev.dataTransfer.setData("text", ev.target.id);
+            // text 라는 임의의 변수에 drag 되는 요소의 id 값 세팅
+            }
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+        // setData(type, data) : 끌어다 놓기 위해 새로운 type 정의하고 끌어올 data 저장
+        // setData(type) : setData에서 정의한 type을 가져옴
+        </script>
+        <body>
+            <p>원하는 상품을 카트에 담으세요</p>
+            <!-- 쇼핑카드 공간
+                 ondrop 함수를 활용해 드롭 명령을 받아들임 -->
+            <div id="shopping_cart" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <br>
+            <!-- 명령을 통해 드래그가 가능하도록 설정
+            드래그 이벤트가 실행도면 함수 실행 -->
+            <img id="img1" src="D:\\media/apple.png" draggable="true" ondragstart="drag(event)">
+            <img id="img2" src="D:\\media/banana.png" draggable="true" ondragstart="drag(event)">
+            <img id="img3" src="D:\\media/button.png" draggable="true" ondragstart="drag(event)">
+            <img id="img4" src="D:\\media/jajang.png" draggable="true" ondragstart="drag(event)">
+            <img id="img5" src="D:\\media/jjambbong.png" draggable="true" ondragstart="drag(event)">
+            <img id="img6" src="D:\\media/tangsuyuk.png" draggable="true" ondragstart="drag(event)">
+            <img id="img7" src="D:\\media/spongebob.png" draggable="true" ondragstart="drag(event)">
+        </body>
+    </head>
+</html>
