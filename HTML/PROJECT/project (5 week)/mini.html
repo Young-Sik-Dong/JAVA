@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+    <script>
+        function Check() {
+            var id=document.getElementById("id").value;
+            var pw=document.getElementById("pw").value;
+            var pwc=document.getElementById("pwc").value;
+            if(id == null){
+                <p id="red">필수 입력 항목입니다.</p>
+            }
+            if(pw == null){
+                <p id="red">필수 입력 항목입니다.</p> 
+            }
+        }
+    </script></head>
+    <body>
+        아이디<input type="text" name="id" id="id"><br>
+        패스워드<input type="password" name="pw" id="pw"><br>
+        패스워드 확인<input type="password" name="pwc" id="pwc"><br>
+        이메일<input type="email" name="email" id="id"><br>
+        주소<input type="text" name="address" id="address"><br>
+        <input type="button" value="가입" onclick="Check()"><br>
+    </body>
+</html>
