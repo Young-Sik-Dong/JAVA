@@ -60,7 +60,7 @@
             function retrieve() { // e는 이벤트 객체
                 if(!window.sessionStorage) {
                     alert("세션 스토리지를 지원하지 않습니다.");
-                    return;
+                    return; 
                 }
                 var val = sessionStorage.getItem(item.value); // key
                 if(val == null)
