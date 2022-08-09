@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title></title>
+        <style>
+            html, body {
+                height: 50%;
+            }
+            #map {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #f00;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <button onClick="initMap(seoul);">Seoul</button>
+        <button onClick="initMap(london);">London</button>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD097XF4UFMbs6tXkoXQ9wSoSKODFlKb-c"></script> <!-- 구글 지도 API키 추가 -->
+        <script>
+            function initMap(pos) {
+                var myLatlng = pos;     
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 4,            
+                    center: myLatlng    // 위도 경도 설정
+                });
+
+                var marker = new google.maps.Marker({ // 지정된 위치에 마커 생성
+                    position: myLatlng,
+                    map: map,   
+                    title: 'Click to zoom'              // 마우스를 마커에 가리켰을 때 나오는 메시지
+                });
+
+                map.addListener('center_changed', function() {  // 위치 변화를 3초뒤에 표시하는 함수
+                    window.setTimeout(function() {              
+                        map.panTo(marker.getPosition());        // 다른 위치로 화면 이동
+                    }, 3000);
+                });
+                marker.addListener('click', function() {    // 마커 클릭 시 확대하는 함수
+                    map.setZoom(8);                         
+                    map.setCenter(marker.getPosition());    
+                });
+            }
+            var seoul = {lat: 37.566535, lng: 126.977969}; // 서울 위도 경도
+            var london = {lat: 51.507351, lng: -0.127758}; // 런던 위도 경도
+            initMap(seoul); // 처음 시작 위치 설정 (서울)
+        </script>
+    </body>
+</html>
