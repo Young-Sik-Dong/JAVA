@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery DOM2</title>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script>
+            $(document).ready(function () {
+                for(var i=0; i<10; i++) {
+                    $('<h1>Create Document Object + ' + i + '</h1>').css({
+                        backgroundColor : "black",
+                        color : 'red',
+                    }).appendTo('body'); // $(객체).appendTo(대상) 객체를 대상의 윗부분에 추가
+                }
+            })
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
+<!-- 
+제이쿼리 요소 추가
+    (1) 새로운 요소나 콘텐츠를 손쉽게 추가할 수 있도록 여러 메소드 제공
+    (2) 기존 요소의 내부에 추가
+        .append()       선택한 요소의 '마지막'에 새로운 요소나 콘텐츠 추가
+        .prepend()      선택한 요소의 '처음'에 새로운 요소나 콘텐츠 추가
+        .appendTo()     선택한 요소를 해당 요소의 마지막에 삽입
+        .prependTo()    선택한 요소를 해당 요소의 처음에 설정
+    (3) 기존 요소의 외부에 추가
+        .before()           선택한 요소의 '바로 앞'에 새로운 요소나 콘텐츠 추가
+        .after()            선택한 요소의 '바로 뒤'에 새로운 요소나 콘텐츠 추가
+        .insertBefore()     선택한 요소를 '해당 요소의 앞'에 삽입
+                            동작은 before() 메소드와 같지만
+                            소스(source)와 타겟(target)의 위치가 서로 반대 
+        .insertAfter()      선택한 요소를 '해당 요소의 뒤'에 삽입
+                            동작은 After() 메소드와 같지만
+                            소스(source)와 타겟(target)의 위치가 서로 반대 
+    (4) 기존 요소를 포함하는 요소의 추가
+        .wrap()             선택한 요소를 포함하는 새로운 요소를 추가
+        .wrapwall()         선택한 모든 요소를 포함하는 새로운 요소를 추가
+        .wrapInner()        선택한 요소에 포함되는 새로운 요소를 추가
+ -->
