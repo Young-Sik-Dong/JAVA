@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+        <script>
+            $(function() {
+                $('#map').append(getmap())
+            });
+            function getmap() {
+                if(!navigator.geolocation)
+                    throw "위치 정보가 지원되지 않습니다.";
+                
+                var image =document.createElement("img");
+                
+                navigator.geolocation.getCurrentPosition(setMapURL, showError);
+                return image;
+
+                function setMapURL(pos) { // 전달된 인자 객체로 위치 정보 받음
+                    var latitude = pos.coords.latitude;     // 적도의 북쪽 기준 각도인 위도
+                    var longitude = pos.coords.longitude;   // 그리니치 천문대의 동쪽 기준 각도의 경도
+                    var accuracy = pos.coords.accuracy;     // 미터 단위의 정확도
+
+                    latitude = latitude.toPrecision(6);
+                    longitude = longitude.toPrecision(6);
+                    // 위도 경도의 소숫점 이하가 길어 유효숫자 6자리로 커팅
+                    var map_url = "http://maps.google.com/maps/api/staticmap" 
+                                + "?center=" + latitude + "," + longitude + "$size=640x640&sensor=true"; 
+                    // 해당 위치의 구글 지도에 대한 정적 이미지 URL 설정
+
+                    var zoomlevel = 20; // 대부분 최대한 확대하여 시작
+                    if(accuracy > 80)   // 위치가 부정확할 경우 축소
+                        zoomlevel -= Math.round(Math.log(accuracy / 50) / Math.LN2);
+                    // 대략적인 줌 레벨 계산 후 설정
+                    map_url += "&zoom=" + zoomlevel; // 줌 레벨 URL에 추가
+                    map_url += "&key=AIzaSyCTF4FSdLCTzM1FU-WKB_EWvNDpL9pl3sI"; // API Key 추가
+                    
+                    image.src = map_url; // 이미지 객체에 지도 출력
+
+                    var now = new Date(position.timestamp);
+                    var text = "현재 시간 " + now.toUTCString() + "<br>";
+                    text += "현재 위치 (위도 " + latitude + "°, 경도 " + longitude + "°)<br>";
+                    text += "정확도 " + accuracy + "m<br>";
+                    document.getElementById("msg").innerHTML = text;
+                }
+
+                function showError(err) {
+                    var errors = [
+                                    err.message,
+                                    "사용자가 권한 거부",
+                                    "위치를 찾을 수 없음",
+                                    "요청 응답 시간 초과"
+                    ];
+                    alert("[" + error.code +"] " + errors[err.code]);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>getCurrentPosition()로 현재 위치 파악</h3><hr>
+        <div id="msg">이곳에 위치 정보 출력</div>
+        <div id="map"></div>
+    </body>
+</html>
