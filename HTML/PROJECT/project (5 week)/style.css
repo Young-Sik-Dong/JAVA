@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+* { /* 전체 */
+    margin: 0; /* 마진값 초기화 */
+    padding: 0; /* 패딩값 초기화 */
+    box-sizing: border-box; /* 박스 영역은 테두리까지 지정 */
+}
+
+ul {
+    list-style: none;
+}
+
+#container { /* 컨테이너 영역 */
+    margin: 0 auto; /* 화면 중앙에 배치 */
+    width: 1200px; /* 너비 지정 */
+}
+
+header { /* 헤더영역 */
+    width: 100%;
+    height: 100px;
+    background-color: #07c;
+}
+
+#logo {
+    float: left;
+    width: 250px;
+    height: 100px;
+    line-height: 100px;
+    padding-left: 20px;
+}
+
+#logo h1 {
+    font-family: 'Satisfy', cursive;
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 -1px 0 #222;
+}
+
+nav {
+    float: right;
+    width: 900px;
+    height: 100px;
+    padding-top: 40px;
+}
+
+#topMenu {
+    height: 60px;
+}
+
+#topMenu > li {
+    float: left;
+    position: relative;
+}
+
+#topMenu > li > a {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 1px #07c;
+    padding: 20px 60px;
+}
+
+#topMenu > li > a > span {
+    font-size: 0.5em;             /* 서브메뉴가 있는 항목에 화살표 */
+}
+
+#topMenu > li > a:hover {
+    color: #000;                /* 마우스 포인터 올릴 시 색상 변경*/
+    text-shadow: 0 -1px #07c;   /* 글자가 굵어지지 않도록 지정 */
+}
+
+#topMenu > li > ul {
+    display: none;
+    position: absolute;
+    width: 160px;
+    background-color: rgba(255, 255, 255, 0.6);
+    left: 20px;
+    margin: 0;
+}
+
+#topMenu > li > ul > li {
+    padding: 10px 10px 10px 30px;
+}
+
+#topMenu > li:hover > ul {
+    display: block; /* 메인 메뉴 항목 위로 오버하면 서브메뉴 표시*/
+    z-index: 10;    /* 슬라이드 쇼에 가리지 않게 조절 */
+}
+
+#topMenu > li > ul > li > a:hover {
+    color: #f00;    /* 서브메뉴 마우스 오버하면 색상 바꾸기*/
+}
+
+#slideShow {
+    clear: both; /* 플로팅 해제 */
+    width: 100%;
+    height: 300px;
+    overflow: hidden; /* 영역 넘치면 감춤 */
+    position: relative;
+}
+
+#slides {
+    position: absolute;
+}
+
+#slides > img {
+    width: 100%;
+    float: left;
+}
+
+#contents {
+    width: 100%;
+    height: 300px;
+}
+
+#tabMenu {
+    float: left;
+    width: 600px;
+    height: 100%;
+    background-color: violet;
+}
+
+#links {
+    float: right;
+    width: 600px;
+    height: 100%;
+    background-color: skyblue;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: gray;
+}
+
+a {
+    text-decoration:none;
+}
