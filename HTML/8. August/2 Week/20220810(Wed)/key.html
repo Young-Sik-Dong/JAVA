@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    <script>
+        window.onload = function() {
+            var input_1 = document.querySelectorAll('input')[0];
+            var input_2 = document.querySelectorAll('input')[1];
+            // querySelectorALL css선택자를 이용해 모든 요소를 찾음
+            // 1, 2번째 input 태그를 가져옴
+            input_1.onkeydown = function() {
+                if (6 <= input_1.value.length) { // 글자 개수 6개 이상
+                    input_2.focus(); // input_2문서 객체로 초점 이동
+                };
+            };
+            input_2.onkeydown = function() { // 이벤트 객체 호출
+                var event = event || window.event;
+                
+                if (event.keyCOde == 8 && input_2.value.length == 0) {
+                    // 사용자 입력 '백스페이스' 입력 글자 없는 경우
+                    // target 프로퍼티 지원하지 않는 문제를 해결하는 코드
+                    // keycode reference table 참고 키코드가 8이면 백스페이스
+                    input_1.focus();
+                    // 새로고침 금지 등 제한기능 적용할 때 eventkeyCode 사용
+                };
+            };
+        }
+    </script>
+    </head>
+    <body>
+        <input type="text" maxlength="6">
+        <span>-</span>
+        <input type="text" maxlength="7">
+    </body>
+</html>
