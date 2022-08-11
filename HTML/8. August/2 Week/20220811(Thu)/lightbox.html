@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Light Box</title>
+    <link rel="stylesheet" href="jQuery.lightbox-0.5.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!-- lightbox : 이미지 클릭 시 작은 창으로 이미지를 상세하게 보여줌 -->
+    <script src="jquery.lightbox-0.5.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a.light').lightBox();
+        });
+    </script>
+    </head>
+    <body>
+        <!-- 클릭하면 lightBox 메소드를 통해 이미지가 확대 생성됨 -->
+        <a class="light" href="images/pic1.jpg">lightBox</a>
+        <a class="light" href="images/pic2.jpg">lightBox</a>
+        <a class="light" href="images/pic3.jpg">lightBox</a>
+    </body>
+</html>
+
+<!--
+light box
+    배경을 어둡게 하고 정보는 밝게 보여주는 플러그인
+Masonry 플러그인
+    핀터레스트와 같은 타일형 웹페이지를 만들 때 사용
+ -->
