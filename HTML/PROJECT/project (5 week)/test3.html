@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>masonry</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!-- masonry : 여러 이미지들을 페이지 크기와 폭에 맞게 알아서 배치 -->
+    <!-- SNS의 이미지 표시나 웹 쇼핑몰 제품 표현 시 활용 -->
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <!-- 이미지 배열 생성 -->
+    <script>
+        var image_arr = ['images/pic1.jpg',
+                        'img-2.jpg',
+                        'img-3.jpg'];
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; }
+        .box {
+            background: black;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            for(var i=0; i<100; i++) {
+                // jQuery와 appendTo를 이용해 body 태그 안에 이미지 객체 생성
+                $('<div id="list1"></div>').addClass('box').css({
+                    width: 100,
+                    // random 메소드 활용하여 임의의 높이를 갖는 100개의 박스 생성
+                    height: Math.floor(Math.random() * 100) + 50, // 세로 랜덤함수 51~150까지 세로가 랜덤 지정
+                    src: image_arr[i%3] // Math.floor : 랜덤의 처음을 1로 시작하게 함
+                }).appendTo('body');    // 이것을 <div></div>로 만들고 body에 추가
+                $('box').attr('src, image_arr[i%3]'); // box 요소에 src 속성을 추가한 후, 속성 값을 image_arr 배열로 지정    
+            }
+            // Masonry 플로그인 적용
+            $('#list1').append('<img src="image_arr[0]">');
+            $('body').masonry({
+                columnwidth: 110
+                // body의 masonry 함수를 이용해 열 넓이를 110으로 지정
+            });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

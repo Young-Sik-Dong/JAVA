@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .box1 {
+                background-image: url('images/img-1.jpg');
+                margin: 5px;
+            }
+            .box2 {
+                background-image: url('images/img-2.jpg');
+                margin: 5px;
+            }
+            .box3 {
+                background-image: url('images/img-3.jpg');
+                margin: 5px;
+            }
+        </style>
+        <script>
+            // 이벤트 연결
+            $(document).ready(function(){
+                // for문으로 아래의 동작을 100번 실행
+                for(var i=0; i<100; i++){
+                    // div박스를 만들고, class를 box로 지정
+                    if( i%3 == 0)
+                    {
+                        $("<div></div>").addClass("box1")
+                        .css({
+                            // 박스의 width는 100으로 고정
+                            width:100,
+                            // 박스의 height는 Math의 random 메소드를 사용하여 51~150의 숫자로 설정
+                            // floor 메소드로 인하여 랜덤의 수가 1부터 시작
+                            height:Math.floor(Math.random()*100)+50
+                        }).appendTo("body"); // 만든 div 박스들을 body 안에 추가
+                    }
+                    else if( i%3 == 1)
+                    {
+                        $("<div></div>").addClass("box2")
+                        .css({
+                            // 박스의 width는 100으로 고정
+                            width:100,
+                            // 박스의 height는 Math의 random 메소드를 사용하여 51~150의 숫자로 설정
+                            // floor 메소드로 인하여 랜덤의 수가 1부터 시작
+                            height:Math.floor(Math.random()*100)+50
+                        }).appendTo("body"); // 만든 div 박스들을 body 안에 추가
+                    }
+                    else
+                    {
+                        $("<div></div>").addClass("box3")
+                        .css({
+                            // 박스의 width는 100으로 고정
+                            width:100,
+                            // 박스의 height는 Math의 random 메소드를 사용하여 51~150의 숫자로 설정
+                            // floor 메소드로 인하여 랜덤의 수가 1부터 시작
+                            height:Math.floor(Math.random()*100)+50
+                        }).appendTo("body"); // 만든 div 박스들을 body 안에 추가
+                    }
+                }
+                // mesonry 플러그인 적용
+                $("body").masonry({
+                    // 열 넓이를 110으로 지정
+                    // 기본 width 100에 padding 5*2 이기 떄문에 110으로 조정
+                    columWidth : 110
+                })
+            });
+        </script>
+    </head>
+</html>

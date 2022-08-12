@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>masonry</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!-- masonry : 여러 이미지들을 페이지 크기와 폭에 맞게 알아서 배치 -->
+    <!-- SNS의 이미지 표시나 웹 쇼핑몰 제품 표현 시 활용 -->
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <!-- 이미지 배열 생성 -->
+    <script>
+        var image_arr = ['img-1.jpg',
+                        'img-2.jpg',
+                        'img-3.jpg'];
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; }
+        .box {
+            background: black;
+            margin: 5px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            for(var i=0; i<3; i++) {
+                // jQuery와 appendTo를 이용해 body 태그 안에 이미지 객체 생성
+                if(i%3 == 0){
+                    $('<div id="array1"></div>').addClass('box').css({
+                        width: 100,
+                        // random 메소드 활용하여 임의의 높이를 갖는 100개의 박스 생성
+                        height: Math.floor(Math.random() * 100) + 50, // 세로 랜덤함수 51~150까지 세로가 랜덤 지정
+                        src: image_arr[i%3] // Math.floor : 랜덤의 처음을 1로 시작하게 함
+                    }).appendTo('body');    // 이것을 <div></div>로 만들고 body에 추가
+                }
+                else if(i%3 == 1){
+                    $('<div id="array1"></div>').addClass('box').css({
+                        width: 100,
+                        // random 메소드 활용하여 임의의 높이를 갖는 100개의 박스 생성
+                        height: Math.floor(Math.random() * 100) + 50, // 세로 랜덤함수 51~150까지 세로가 랜덤 지정
+                        src: image_arr[i%3] // Math.floor : 랜덤의 처음을 1로 시작하게 함
+                    }).appendTo('body');    // 이것을 <div></div>로 만들고 body에 추가
+                }
+                else if(i%3 == 2){
+                    $('<div id="array1"></div>').addClass('box').css({
+                        width: 100,
+                        // random 메소드 활용하여 임의의 높이를 갖는 100개의 박스 생성
+                        height: Math.floor(Math.random() * 100) + 50, // 세로 랜덤함수 51~150까지 세로가 랜덤 지정
+                        src: image_arr[i%3] // Math.floor : 랜덤의 처음을 1로 시작하게 함
+                    }).appendTo('body');    // 이것을 <div></div>로 만들고 body에 추가
+                }
+            }
+            $('box1').append('<img src= "images/img-1.jpg">'); // -> box1에 이미지-1 넣기
+            $('box2').append('<img src= "images/img-2.jpg">'); // -> 이미지 처리 오류 : 복붙이기 때문에 이미지 크기 지정 안됨
+            $('box3').append('<img src= "images/img-3.jpg">'); // -> 이미지 처리 오류 : 복붙이기 때문에 이미지 크기 지정 안됨
+            // Masonry 플로그인 적용
+            $('body').masonry({
+                columnwidth: 110
+                // body의 masonry 함수를 이용해 열 넓이를 110으로 지정
+            });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
