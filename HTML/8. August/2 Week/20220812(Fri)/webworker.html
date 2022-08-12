@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>1~10까지 더하는 워크 테스크 만들기</title>
+</head>
+<!-- 
+웹 워커
+    쟈바스크립트 코드를 백그라운드 코드로 추가하는 방법
+    백그라운드 코드를 워커 태스크라고 하며 일반적인 작업환경 처럼
+    실행하거나 사용자 인터페이스를 활용하는 것은 불가능
+-->
+<body>
+    <h3>1~10까지 더하는 워크 테스크 만들기</h3><hr>
+    <div>1에서 10까지의 합은 <span id="sum"></span></div>
+    <script>
+        // addworker 워커 객체 생성 및 워커 태스크 시작
+        // add1to10.js 코드를 워커 태스크로 지정
+        var addWorker = new Worker("add1to10.js");
+        // 워크 테스크로부터 message 이벤트 수신
+        addWorker.onmessage = function(e) { // e는 MessageEvent 객체
+        // 이벤트 객체의 data(합) 출력
+        document.getElementById("sum").innerHTML = e.data;
+        }
+    </script>
+</body>
+</html>
+<!-- 
+postMessage(sum);
+    js에서 값을 계산하고 다시 html 파일에게 메세지를 보내는 메소드
+
+addWorker.onmessage = function(e){
+    js에서 보낸 메시지를 받아 e에 값을 넣고 함수 실행
+
+document.getElementById("sum").innerHTML = e.data;
+함수는 id가 sum인 태그에다 그 값을 넣어  HTML에 출력
+}
+
+확인결과 크롬에서는 출력이 되지 않음 (보안 이슈)
+Live server로 실행해야 출력이 됨 (https 를 사용하기 때문 )
+ -->
